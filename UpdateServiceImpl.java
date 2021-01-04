@@ -37,9 +37,4 @@ public class ReviewServiceImpl implements ReviewService {
         return reviewMapper.selectTotalByOrderItemId(productOrderItemId);
     }
 
-    @Transactional(propagation = Propagation.REQUIRED,rollbackFor = Exception.class)
-    @Override
-    public boolean add(Review review) {
-        return reviewMapper.insertOne(review)>0;
-    }
 }
